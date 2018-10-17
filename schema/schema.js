@@ -1,5 +1,6 @@
 const graphql = require('graphql');
 const Image = require('../models/image');
+const Object = require('../models/object');
 const _ = require('lodash');
 
 const {
@@ -8,7 +9,8 @@ const {
     GraphQLString,
     GraphQLInt,
     GraphQLList,
-    GraphQLNonNull
+    GraphQLNonNull,
+    GraphQLFloat
 } = graphql;
 
 const ImageType = new GraphQLObjectType({
@@ -17,6 +19,15 @@ const ImageType = new GraphQLObjectType({
         case_id: { type: GraphQLString },
         width: { type: GraphQLInt },
         height: { type: GraphQLInt }
+    })
+});
+
+const ObjectType = new GraphQLObjectType({
+    name: 'Object',
+    fields: ( ) => ({
+        object_type: { type: GraphQLString },
+        x: { type: GraphQLFloat },
+        y: { type: GraphQLFloat }
     })
 });
 
@@ -34,6 +45,12 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(ImageType),
             resolve(parent, args){
                 return Image.find({});
+            }
+        },
+        object: {
+            type: ObjectType,
+            resolve(parent, args){
+                return Object.findOne({});
             }
         }
     }
