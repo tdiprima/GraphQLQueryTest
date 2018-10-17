@@ -23,11 +23,11 @@ const ImageType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
-        images: { // td: here?
+        images: {
             type: ImageType,
             args: { case_id: { type: GraphQLString } },
             resolve(parent, args){
-                return Image.findById(args.case_id);
+                return Image.findOne({case_id: args.case_id});
             }
         },
         images: {
