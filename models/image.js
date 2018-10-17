@@ -1,4 +1,3 @@
-// TD: MongoDB Tutorial #4
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -8,5 +7,5 @@ const imageSchema = new Schema({
     height: Number
 });
 
-// TD: image becomes images
+// Image becomes images
 module.exports = mongoose.model('image', imageSchema);
