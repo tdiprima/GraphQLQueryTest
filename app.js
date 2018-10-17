@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to database
-mongoose.connect('mongodb://<URL>:<PORT>/<DB>')
+mongoose.connect('mongodb://localhost:27017/lalala');
 mongoose.connection.once('open', () => {
     console.log('connected to database');
 });
@@ -18,5 +18,5 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 app.listen(4000, () => {
-    console.log('now listening for requests on port 4000');
+    console.log('http://localhost:4000/graphql');
 });

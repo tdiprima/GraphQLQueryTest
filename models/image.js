@@ -1,10 +1,12 @@
+// TD: MongoDB Tutorial #4
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const imageSchema = new Schema({
-    name: String,
-    genre: String,
-    authorId: String
+    case_id: String,
+    width: Number,
+    height: Number
 });
 
-module.exports = mongoose.model('Image', imageSchema);
+// TD: image becomes images
+module.exports = mongoose.model('image', imageSchema);
