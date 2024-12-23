@@ -1,8 +1,11 @@
-# graphql test server
-testing graphql server
+## Testing a GraphQL server
 
-Simple test that `finds` either all images from the image collection, or returns a single image based on the parameter that you give it.
+The fundamental test involves retrieving either all images from the image collection or returning a single image, depending on the given parameter.
 
-Also `finds` a single object.
+Additionally, it includes a test that queries a single object.
 
-Start with `nodemon`.
+Begin by launching the application using `nodemon`.
+
+Then visit: http://localhost:4000/graphql
+
+Make sure MongoDB is running on localhost:27017.
