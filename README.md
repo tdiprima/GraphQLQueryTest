@@ -9,3 +9,8 @@ Begin by launching the application using `nodemon`.
 Then visit: http://localhost:4000/graphql
 
 Make sure MongoDB is running on localhost:27017.
+
+---
+
+This project may include third-party open-source code, subject to its original licenses.
+If there is a licensing concern, please open an issue.
